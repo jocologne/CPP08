@@ -28,6 +28,12 @@ void Span::addNumber(int num) {
 	_numbers.push_back(num);
 }
 
+void Span::addSpan(int min, int max) {
+	for (int i = min; i <= max; i++) {
+		this->addNumber(i);
+	}
+}
+
 int Span::shortestSpan() const {
 	if (_numbers.size() < 2)
 		throw std::runtime_error("Not enough numbers");

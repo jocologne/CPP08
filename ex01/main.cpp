@@ -24,7 +24,7 @@ int main() {
 	try {
 		s2.addNumber(1);
 		std::cout << s2.shortestSpan() << std::endl;
-	} catch(const std::exception& e) {
+	} catch (const std::exception& e) {
 		std::cerr << "Error: " << e.what() << std::endl;
 	}
 	
@@ -33,7 +33,7 @@ int main() {
 	try {
 		s3.addNumber(1);
 		std::cout << s3.longestSpan() << std::endl;
-	} catch(const std::exception& e) {
+	} catch (const std::exception& e) {
 		std::cerr << "Error: " << e.what() << std::endl;
 	}
 
@@ -45,7 +45,7 @@ int main() {
 		}
 		std::cout << s4.shortestSpan() << std::endl;
 		std::cout << s4.longestSpan() << std::endl;
-	} catch(const std::exception& e) {
+	} catch (const std::exception& e) {
 		std::cerr << "Error: " << e.what() << std::endl;
 	}
 
@@ -57,7 +57,7 @@ int main() {
 		}
 		std::cout << s5.shortestSpan() << std::endl;
 		std::cout << s5.longestSpan() << std::endl;
-	} catch(const std::exception& e) {
+	} catch (const std::exception& e) {
 		std::cerr << "Error: " << e.what() << std::endl;
 	}
 
@@ -67,7 +67,7 @@ int main() {
 		for (unsigned int i = 0; i < 11; i++) {
 			s6.addNumber(i);
 		}
-	} catch(const std::exception& e) {
+	} catch (const std::exception& e) {
 		std::cerr << "Error: " << e.what() << std::endl;
 	}
 
@@ -79,9 +79,41 @@ int main() {
 		s7.addNumber(3);
 		std::cout << s7.shortestSpan() << std::endl;
 		std::cout << s7.longestSpan() << std::endl;
-	} catch(const std::exception& e) {
+	} catch (const std::exception& e) {
 		std::cerr << "Error: " << e.what() << std::endl;
 	}
 
-	return 0;
+	std::cout << std::endl;
+	Span s8(20);
+	try {
+		s8.addSpan(2, 10);
+		std::cout << s8.shortestSpan() << std::endl;
+		std::cout << s8.longestSpan() << std::endl;
+	} catch (const std::exception& e) {
+		std::cerr << "Error: " << e.what() << std::endl;
+	}
+
+	std::cout << std::endl;
+	Span s9(7);
+	int data[] = {2, 4, 6, 8, 10, 12, 14};
+	std::vector<int> range(data, data + 7);
+	try {
+		s9.addRange(range.begin(), range.end());
+		std::cout << s9.shortestSpan() << std::endl;
+		std::cout << s9.longestSpan() << std::endl;
+	} catch (const std::exception& e) {
+		std::cerr << "Error: " << e.what() << std::endl;
+	}
+
+	std::cout << std::endl;
+	Span s10(6);
+	try {
+		s10.addRange(range.begin(), range.end());
+		std::cout << s10.shortestSpan() << std::endl;
+		std::cout << s10.longestSpan() << std::endl;
+	} catch (const std::exception& e) {
+		std::cerr << "Error: " << e.what() << std::endl;
+	}
+
+	return 1;
 }
